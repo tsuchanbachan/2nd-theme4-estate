@@ -1,0 +1,488 @@
+@use "sass:map";
+@use '../global' as *;
+
+/* ------------
+デフォルト色の指定
+-------------*/
+$border-cr: #4D9600; //inputのhover or focus時の色
+
+/* ------------
+ラジオボタンの指定
+------------- */
+$radio-fz: 1.8rem; //フォントサイズ
+$radio-size: 20px; //外枠の幅・高さ
+$radio-bg-cr: #fff; //外枠の背景色
+// $radio-border-cr: #707070; //外枠の色
+$radio-size-inner: 6px; //ラジオボタン幅高さ
+$radio-bg-cr-inner: #000; //ラジオボタンの背景色
+$radio-space: 19px; //ラジオボタンと文字の距離
+$radio-space-betweenRadio: 74px; //ラジオボタンの間の距離
+
+/* ------------
+チェックボックスの指定
+-------------*/
+$check-fz: 1.8rem; //フォントサイズ
+$check-size: 20px; //外枠の幅高さ
+$check-bg-cr: #fff; //外枠の背景色
+// $check-border-cr: #f00; //外枠の色
+$check-bg-cr-inner: #333; //チェックマークの背景色
+$check-space: 20px; //チェックマークと文字の距離
+$check-space-betweenRadio: 20px; //チェックマークの間の距離
+$check-weight: 2px; //チェックマークの線の太さ(px)
+
+/* ------------
+テキストエリアの指定
+------------- */
+$textarea-height: 200px;
+
+/* ------------
+各種要素
+------------- */
+[type="text"],
+[type="email"],
+select,
+textarea {
+  /*↓リセットCSS */
+  border: none;
+  border-radius: 0;
+  background-image: none;
+  font-family: inherit;
+
+  /*↓カスタム */
+  // margin-top: 10px;
+  font-size: 1.8rem;
+  padding: 10.9375px 20px;
+  width: 100%;
+  // max-width: 300px;
+  background: #fff;
+  // border-radius: 6px;
+
+  /*↓↓↓↓不要ならコメントアウト or 削除 */
+  // &:hover {  //ホバーしたときの色
+  // 	border: 1px solid #000;
+  // }
+  /*↓↓選択されているときの色*/
+  &:focus {
+    // border: 1px solid #000;
+  }
+
+  @include mq(sp) {
+    line-height: calc(25 / 16);
+    padding: 13px 20px 12px;
+    font-size: 1.6rem;
+  }
+}
+
+/* プレースホルダーのスタイル */
+input::placeholder {
+  color: #A0A0A0;
+  font-size: 1.8rem;
+  
+  @include mq(sp) {
+    font-size: 1.6rem;
+    
+  }
+}
+/* ------------
+ラジオボタン
+------------- */
+
+[type="radio"] {
+  display: none;
+
+  +span {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 calc($radio-size + $radio-space);
+    margin: 0 $radio-space-betweenRadio 0 0;
+    font-size: $radio-fz;
+    line-height: 1;
+    cursor: pointer;
+
+    @include mq(sp) {
+      padding-left: 30px;
+      margin-right: 34px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: $radio-bg-cr;
+      // border: 1px solid $radio-border-cr;
+      border-radius: 50%;
+      width: $radio-size;
+      height: $radio-size;
+      display: block;
+    }
+
+    &::after {
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+  }
+
+  &:checked+span {
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: calc(($radio-size - $radio-size-inner) / 2);
+      transform: translateY(-50%);
+      background: $radio-bg-cr-inner;
+      border-radius: 50%;
+      width: $radio-size-inner;
+      height: $radio-size-inner;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.form__input {
+
+  label:last-of-type {
+    [type="radio"] {
+      +span {
+        @include mq(sp) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}     
+
+/* ------------
+チェックボックス
+------------- */
+[type="checkbox"] {
+  display: none;
+
+  // 箱に付属の項目名（選択肢のラベル）
+  +span {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 calc($check-size + $check-space);
+    // margin: 0 $check-space-betweenRadio 0 0;
+    margin: 0;
+    font-size: $check-fz;
+    line-height: 1;
+    cursor: pointer;
+    // transition: 0.3s ease;
+
+    width: calc(20px + 20px + 126px + 34px);
+
+    @include mq(sp) {
+      font-size: 1.6rem;
+      width: calc(20px + 10px + 112px);
+      padding-left: calc($check-size + 10px);
+    }
+
+    // 箱
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: $check-bg-cr;
+      // border: 1px solid $check-border-cr;
+      width: $check-size;
+      height: $check-size;
+      display: block;
+    }
+
+    // &::after {
+    //   opacity: 0;
+    //   transition: 0.3s ease;
+    // }
+  }
+
+  // チェックマーク
+  &:checked+span {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      opacity: 1;
+      /*チェックマークじゃない場合は以下を変更する*/
+      transform: translateY(-50%) rotate(-45deg);
+      width: calc($check-size * 0.9);
+      height: calc($check-size * 0.5);
+      margin-top: -0.1em;
+      margin-left: 0.1em;
+      border-left: $check-weight solid $check-bg-cr-inner;
+      border-bottom: $check-weight solid $check-bg-cr-inner;
+
+    }
+  }
+}
+
+/* ------------
+セレクト
+------------- */
+select {
+  /*↓リセットCSS */
+  border-radius: 0;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+
+  /*↓カスタム */
+  // margin-top: 10px;
+  font-size: 1.6rem;
+  // line-heightが制御不能？なのでpaddingで調整
+  // padding: 16px 10px;
+  background-color: #fff;
+  /*↓デフォルトのアイコンを消す場合はコメントアウト（自作ならnoneに。つける場合はauto？）*/
+  appearance: none;
+
+  /*↓デフォルトではないアイコンを使う場合は入力する*/
+  // background-image: url();
+  // background-position: right 12px center;
+  // background-repeat: no-repeat;
+
+  // &:focus {
+  //   border: 1px solid $border-cr;
+  // }
+
+
+    // min-width: 230px;
+    // height: 2.8em;
+
+    height: 50px;
+}
+
+.form__input:has(select) {
+  position: relative;
+  
+}
+
+.form__input:has(select)::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+  right: 20px;
+  top: 39%;
+  // transform: translateX(-50%);
+  width: 20px;
+  height: 16px;
+
+  background-image: url(../image/icon-triangle.svg);
+  // background-position: right 12px center;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  // outline: 2px solid #2589d0;
+}
+
+
+/* ------------
+テキストエリア
+------------- */
+textarea {
+  height: $textarea-height;
+  width: 100%;
+  // 謎の余白防止
+  display: block;
+  // max-width: 600px;
+}
+
+
+/* ------------
+ボタン
+------------- */
+[type="submit"] {
+  /*↓リセットCSS */
+  margin: 0;
+  background-image: none;
+  width: auto;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+
+  /*↓カスタム */
+  // padding: 20px 72px;
+  // background: red;
+  // color: white;
+  // font-size: 1.4rem;
+  // cursor: pointer;
+  // transition: 0.3s ease;
+  // line-height: 1;
+
+  width: 300px;
+  background: $color-green;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: $font-demibold;
+  cursor: pointer;
+  line-height: 1;
+  height: 5rem;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+  border: 1px solid $color-green;
+  // padding-bottom: 0.2rem;
+  box-sizing: border-box;
+
+  @include mq(sp) {
+    width: 315px;
+    max-width: 100%;
+      // width: min(315px, 100%);
+  }
+
+  /* ホバー時反転 */
+  @media (any-hover: hover) {
+    &:hover {
+      background: #fff;
+      color: $color-green;
+    }
+  }
+}
+
+.form__button {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+
+  @include mq(sp) {
+    // justify-content: stretch;
+    margin-top: 50px;
+  }
+}
+
+
+.form__items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+
+  @include mq(sp) {
+    row-gap: 30px;
+  }
+}
+
+.form__item {
+  display: flex;
+  column-gap: calc(19 / 800 * 100%);
+  align-items: center;
+
+  @include mq(sp) {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+
+.form__item--column {
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: normal;
+
+  @include mq(sp) {
+    row-gap: 0;
+  }
+}
+
+.form__item--column .form__label {
+  width: 100%;
+}
+
+.form__item--sex {
+  @include mq(sp) {
+    flex-direction: row;
+    column-gap: 0;
+    align-items: center;
+  }
+  
+  .form__label {
+    @include mq(sp) {
+      width: calc(40px + 50px);
+    }
+  }
+}
+
+.form__item .form__input{
+  flex: 1;
+}
+
+.form__label {
+  width: 151px;
+
+  @include mq(sp) {
+    width: 100%;
+  }
+}
+
+.form__label label {
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+
+
+}
+
+.form__label label[for="email"] {
+  letter-spacing: -0.05em;
+
+  @include mq(sp) {
+    letter-spacing: 0;
+  }
+}
+.form__label label[for="check"] {
+  @include mq(sp) {
+    line-height: calc(27 / 20);
+  }
+}
+
+.form__input.input-check {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 15px;
+
+  @include mq(sp) {
+    column-gap: 16px;
+    row-gap: 5px;
+  }
+}
+
+// 個人情報
+.form__privacy {
+  // 右はスクロールバーの外側の余白
+  padding: 40px 10px 40px 40px;
+  background: #fff;
+  
+  @include mq(sp) {
+    padding: 30px 10px 30px 30px;
+  }
+}
+
+.form__privacy-content {
+  overflow-y: auto;
+  // ここにheight指定しないとはみ出す。
+  height: calc(300px - 40px * 2);
+  // スクロールバーを含んだ余白
+  padding-right: calc(40px + 10px);
+
+
+
+
+  @include mq(sp) {
+    height: calc(323px - 30px * 2);
+    padding-right: calc(30px + 10px);
+  }
+}
+
+.form__privacy-content p {
+  font-size: 1.8rem;
+  line-height: calc(31 / 18);
+
+  @include mq(sp) {
+    font-size: 1.6rem;
+    line-height: calc(33 / 16);
+  }
+}

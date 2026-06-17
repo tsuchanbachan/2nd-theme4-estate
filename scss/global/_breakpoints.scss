@@ -1,0 +1,48 @@
+@use "sass:map";
+
+/* ブレイクポイント */
+$breakpoints: (
+  pc: "(min-width: 1080px)",
+  tab: "(min-width: 768px) and (max-width: 1079px)",
+  sp: "(max-width: 767px)",
+);
+
+@mixin mq($point) {
+  @media #{map.get($breakpoints, $point)} {
+    @content;
+  }
+}
+
+/* PC、SPの非表示 */
+/* このコメントは消すこと！クラス名.pc付与でPC時のみ表示。小さくても768までしか表示されない */
+.pc {
+  @include mq(sp) {
+    display: none !important;
+  }
+}
+
+/* このコメントは消すこと！クラス名.sp付与でスマホ時のみ表示。大きくても767までしか表示されない */
+.sp {
+  display: none;
+
+  @include mq(sp) {
+    display: block !important;
+  }
+}
+
+// これと同意語
+// .sp {
+//   @media (min-width: 768px) {
+//     display: none !important;
+//   }
+// }
+
+/* pc時のみinline-block（spanにつけるclass） */
+/* 通常のPCではspanで改行、2行に収まらなくなったら改行位置にこだわらない前提 */
+.line-break {
+  display: inline-block;
+
+  @include mq(sp) {
+    display: inline;
+  }
+}

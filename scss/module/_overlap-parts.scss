@@ -1,0 +1,175 @@
+@use "sass:map";
+@use '../global' as *;
+
+.overlap-parts {
+  display: grid;
+  grid-template-columns: 248fr 225fr 27fr;
+  grid-template-rows: 50fr 158fr 42fr;
+
+  @include mq(sp) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-rows: 1fr;
+      // row-gap: 6px;
+    }
+}
+
+.overlap-parts__green {
+  background: $color-green;
+
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+
+  @include mq(sp) {}
+}
+
+
+.overlap-parts__child {
+  color: $color-white;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  @include mq(sp) {
+    // width: 100%;
+
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    padding: 20px 20px 12px;
+  }
+}
+
+.overlap-parts__title {}
+
+.overlap-parts__title h3 {
+  font-size: 2.5rem;
+  line-height: calc(33 / 25);
+
+  @include mq(tab) {
+    font-size: calc(25 / 1080 * 100vw);
+
+  }
+
+  @include mq(sp) {
+    font-size: 2rem;
+    line-height: calc(25 / 20);
+  }
+
+  @media (max-width: 374px) {
+    font-size: 1.8rem;
+  }
+
+}
+
+.overlap-parts__title h3 span {
+  display: inline-block;
+}
+
+.overlap-parts__text {
+  margin-top: 17px;
+
+  @include mq(sp) {
+    margin-top: 14px;
+  }
+}
+
+.overlap-parts__text p {
+  font-size: 1.6rem;
+  line-height: calc(25 / 16);
+
+  @include mq(tab) {
+    font-size: calc(16 / 1080 * 100vw);
+
+  }
+
+  @include mq(sp) {
+    font-size: 16px;
+  }
+}
+
+// -------
+// reverse
+// -------
+.overlap-layout--reverse {
+
+  .overlap-parts {
+    // display: grid;
+    grid-template-columns: 40fr 275fr 185fr;
+    // grid-template-rows: 50fr 158fr 42fr;
+  }
+}
+
+
+// -------
+// company
+// -------
+.overlap-layout--company {
+
+  .overlap-parts {
+      grid-template-columns: 220fr 275fr 5fr;
+      grid-template-rows: 49fr 171fr 42fr;
+  }
+
+  .overlap-parts__child {
+    @include mq(sp) {
+      padding: 19px 20px 12px;
+    }
+  }
+  
+  .overlap-parts__text {
+    margin-top: 0;
+  }
+
+  .overlap-parts__text-company p {
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+
+    @include mq(tab) {
+      // font-size: calc(16 / 1080 * 100vw);
+      font-size: 1.8rem;
+    }
+  
+    @include mq(sp) {
+      // font-size: 16px;
+    }
+  }
+
+  .overlap-parts__address {
+    margin-top: 7px;
+  }
+
+  .overlap-parts__address p {
+    font-size: 1.6rem;
+    line-height: calc(25 / 16);
+
+    @include mq(tab) {
+        font-size: 1.4rem;
+    }
+  }
+
+  .overlap-parts__text-tel {
+    margin-top: 12px;
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .overlap-parts__text-tel dt {
+    font-size: 16px;
+    line-height: calc(25 / 16);
+  }
+
+  .overlap-parts__text-tel dd {
+    font-size: 2.5rem;
+    line-height: calc(25 / 25);
+  }
+
+  .overlap-parts__text-mail {
+    margin-top: 19px;
+    display: flex;
+  }
+
+  .overlap-parts__text-mail dt,
+  .overlap-parts__text-mail dd {
+    font-size: 1.6rem;
+    line-height: calc(25 / 16);
+  }
+}

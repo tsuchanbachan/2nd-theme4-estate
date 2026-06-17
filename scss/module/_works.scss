@@ -1,0 +1,33 @@
+@use "sass:map";
+@use '../global' as *;
+
+/* ワークス */
+/* ------- */
+.works {
+  padding-block: 80px 97px;
+
+  @include mq(sp) {
+    padding-block: 50px 42px;
+  }
+}
+
+.works__inner {}
+
+.works__title-wrap {}
+
+.works__title {}
+
+.works__contents {
+  display: flex;
+  column-gap: calc(40 / 920 * 100%);
+  margin-top: 68px;
+
+  @include mq(sp) {
+    flex-direction: column;
+    row-gap: 22px;
+    margin-top: 38px;
+  }
+}
+
+.works__content {
+}

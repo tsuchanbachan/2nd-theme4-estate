@@ -1,0 +1,26 @@
+@use "../global" as *;
+@use "sass:math";
+
+/* サービス */
+/* ------ */
+.service {
+  background-color: $color-back-green;
+  padding-block: 79px 80px;
+
+  @include mq(sp) {
+    padding-block: 50px;
+  }
+}
+
+// カード
+.service__contents {
+  display: grid;
+  row-gap: 80px;
+
+  margin-top: 67px;
+
+  @include mq(sp) {
+    row-gap: 50px;
+    margin-top: 38px;
+  }
+}

@@ -1,0 +1,20 @@
+@use "../global" as *;
+@use "sass:math";
+
+/* 会社案内 */
+/* ------- */
+.company {
+  padding-block: 80px;
+
+  @include mq(sp) {
+    padding-block: 50px;
+  }
+}
+
+.company__contents {
+  margin-top: 68px;
+
+  @include mq(sp) {
+    margin-top: 38px;
+  }
+}

@@ -1,0 +1,50 @@
+@use "../global" as *;
+@use "sass:math";
+
+.news-item {
+  border-bottom: solid 1px #55A500;
+}
+
+.news-item__link {
+  display: flex;
+  padding-block: 20.5px 12px;
+  column-gap: calc(69 / 390 * 100%);
+  justify-content: space-between;
+  transition: opacity 0.4s;
+
+  @include mq(sp) {
+    column-gap: calc(19 / 275 * 100%);
+  }
+}
+
+.news-item__link:hover {
+  @media (any-hover: hover) {
+    opacity: 0.7;
+  }
+}
+
+.news-item__time {
+  width: 53px;
+}
+
+.news-item__date {
+  font-size: 1.6rem;
+  line-height: calc(33 / 16);
+  display: block;
+  line-height: 1;
+  // 英字（単語）を途中で折り返さない
+  word-break: keep-all;
+}
+
+.news-item__text {
+  flex: 1;
+}
+
+.news-item__text p {
+  font-size: 1.8rem;
+  line-height: calc(25 / 18);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

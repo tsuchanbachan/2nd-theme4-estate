@@ -1,0 +1,33 @@
+@use "../global" as *;
+@use "sass:math";
+
+/* topへ戻る */
+/* -------- */
+.top-button {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 100;
+
+  @include mq(sp) {
+    right: 20px;
+  }
+}
+
+.top-button__link {
+  transition: opacity 0.4s;
+  cursor: pointer;
+}
+
+// ボタンをホバーしたときのカーソルを変更
+.top-button__link:hover {
+  @media (any-hover: hover) {
+    opacity: 0.7;
+  }
+}
+
+.top-button__link img {
+  width: 68px;
+  aspect-ratio: 68 / 68;
+  object-fit: cover;
+}

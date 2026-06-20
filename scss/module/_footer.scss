@@ -18,6 +18,9 @@
   padding-inline: 30px;
   padding-block: 80px;
   
+  @include mq(sp) {
+    padding-block: 50px
+  }
 }
 
 .footer__content {
@@ -30,6 +33,10 @@
   padding-bottom: 28px;
   border-bottom: solid 1px $color-main;
   text-align: center;
+
+  @include mq(sp) {
+    padding-bottom: 20px;
+  }
 }
 
 .footer__company p {
@@ -39,6 +46,10 @@
 
 .footer__nav {
   margin-top: 28px;
+
+  @include mq(sp) {
+    margin-top: 20px;
+  }
 }
 
 .footer__nav ul {

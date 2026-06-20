@@ -162,6 +162,12 @@
     line-height: calc(25 / 25);
   }
 
+  .overlap-parts__text-tel dd a[href^="tel:"] {
+    @include mq(pc) {
+      pointer-events: none;
+    }
+  }
+
   .overlap-parts__text-mail {
     margin-top: 19px;
     display: flex;

@@ -196,6 +196,11 @@ meter {
   padding-inline: 30px;
   padding-block: 80px;
 }
+@media (max-width: 767px) {
+  .footer__inner {
+    padding-block: 50px;
+  }
+}
 
 .footer__content {
   max-width: 722px;
@@ -208,6 +213,11 @@ meter {
   border-bottom: solid 1px #000000;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .footer__company {
+    padding-bottom: 20px;
+  }
+}
 
 .footer__company p {
   font-size: 2rem;
@@ -216,6 +226,11 @@ meter {
 
 .footer__nav {
   margin-top: 28px;
+}
+@media (max-width: 767px) {
+  .footer__nav {
+    margin-top: 20px;
+  }
 }
 
 .footer__nav ul {
@@ -348,7 +363,7 @@ textarea {
   select,
   textarea {
     line-height: 1.5625;
-    padding: 13px 20px 12px;
+    padding: 14px 20px 12px;
     font-size: 1.6rem;
   }
 }
@@ -516,7 +531,6 @@ select {
   border: none;
   cursor: pointer;
   /*↓カスタム */
-  font-size: 1.6rem;
   background-color: #fff;
   /*↓デフォルトのアイコンを消す場合はコメントアウト（自作ならnoneに。つける場合はauto？）*/
   -webkit-appearance: none;
@@ -622,7 +636,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .form__items {
-    row-gap: 30px;
+    row-gap: 34px;
   }
 }
 
@@ -704,9 +718,16 @@ textarea {
   }
 }
 
-.form__label label {
+.form__label label,
+.form__label span {
   font-size: 2rem;
   line-height: 1.65;
+}
+@media (max-width: 767px) {
+  .form__label label,
+  .form__label span {
+    line-height: 1.35;
+  }
 }
 
 .form__label label[for=email] {
@@ -718,10 +739,18 @@ textarea {
   }
 }
 
+.form__item--check {
+  margin-top: -2px;
+}
+
 @media (max-width: 767px) {
-  .form__label label[for=check] {
+  .form__item--check .form__label span {
     line-height: 1.35;
   }
+}
+
+.form__item--privacy {
+  margin-top: -2px;
 }
 
 .form__input.input-check {
@@ -870,6 +899,7 @@ textarea {
   grid-column: 1/3;
   grid-row: 1/3;
   position: relative;
+  z-index: 2;
 }
 @media (max-width: 767px) {
   .overlap-layout__media {
@@ -905,6 +935,8 @@ textarea {
 .overlap-layout__service {
   grid-column: 2/4;
   grid-row: 2/4;
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 767px) {
   .overlap-layout__service {
@@ -1102,6 +1134,11 @@ textarea {
   font-size: 2.5rem;
   line-height: 1;
 }
+@media (min-width: 1080px) {
+  .overlap-layout--company .overlap-parts__text-tel dd a[href^="tel:"] {
+    pointer-events: none;
+  }
+}
 .overlap-layout--company .overlap-parts__text-mail {
   margin-top: 19px;
   display: -webkit-box;
@@ -1114,16 +1151,19 @@ textarea {
   line-height: 1.5625;
 }
 
-.works-content__link {
+.works-content {
   width: 21.7391304348%;
+}
+@media (max-width: 767px) {
+  .works-content {
+    width: 100%;
+  }
+}
+
+.works-content__link {
   cursor: pointer;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-}
-@media (max-width: 767px) {
-  .works-content__link {
-    width: 100%;
-  }
 }
 
 @media (any-hover: hover) {
@@ -1155,7 +1195,7 @@ textarea {
 /* ワークス */
 /* ------- */
 .works {
-  padding-block: 80px 97px;
+  padding-block: 81px 97px;
 }
 @media (max-width: 767px) {
   .works {
@@ -1334,6 +1374,9 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 31px;
+     -moz-column-gap: 31px;
+          column-gap: 31px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1361,18 +1404,6 @@ section {
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
   }
-}
-
-.header__nav ul li:first-of-type a {
-  padding-inline: 0 15.5px;
-}
-
-.header__nav ul li:last-of-type a {
-  padding-inline: 15.5px 0;
-}
-
-.header__nav ul li:not(:first-of-type):not(:last-of-type) a {
-  padding-inline: 15.5px 15.5px;
 }
 
 .header__nav ul li a::after {
@@ -1563,7 +1594,7 @@ section {
 /* about */
 /* ----- */
 .about {
-  padding-block: 110px;
+  padding-block: 113px 110px;
   background-image: url(../image/about-pc.jpg);
   background-size: cover;
   background-position: center;
@@ -1573,13 +1604,13 @@ section {
 @media (max-width: 767px) {
   .about {
     background-image: url(../image/about-sp.jpg);
-    padding-block: 50px;
+    padding-block: 54px 50px;
     min-height: 584px;
   }
 }
 
 .about__inner {
-  padding-left: 120px;
+  padding-left: 70px;
 }
 @media (max-width: 767px) {
   .about__inner {
@@ -1617,7 +1648,7 @@ section {
 
 .about__title-wrap h2 {
   font-size: 3rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   line-height: 1;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
@@ -1631,13 +1662,27 @@ section {
   }
 }
 
+.about__contents {
+  width: min(402px, 100%);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .about__contents {
+    width: min(315px, 100%);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .about__contents p {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
   font-size: 1.8rem;
-  letter-spacing: 0.37em;
+  letter-spacing: 0.39em;
   line-height: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1653,6 +1698,10 @@ section {
     font-size: 1.6rem;
     letter-spacing: 0.25em;
     row-gap: 10px;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -1664,7 +1713,7 @@ section {
 /* ------ */
 .service {
   background-color: rgba(77, 150, 0, 0.15);
-  padding-block: 80px;
+  padding-block: 79px 80px;
 }
 @media (max-width: 767px) {
   .service {
@@ -1675,7 +1724,7 @@ section {
 .service__contents {
   display: grid;
   row-gap: 80px;
-  margin-top: 68px;
+  margin-top: 67px;
 }
 @media (max-width: 767px) {
   .service__contents {
@@ -1687,7 +1736,7 @@ section {
 /* お知らせ */
 /* ------- */
 .news {
-  padding-block: 80px;
+  padding-block: 81px 80px;
   background-color: rgba(77, 150, 0, 0.15);
 }
 @media (max-width: 767px) {
@@ -1703,7 +1752,7 @@ section {
   -webkit-column-gap: 6.5217391304%;
      -moz-column-gap: 6.5217391304%;
           column-gap: 6.5217391304%;
-  margin-top: 65px;
+  margin-top: 67px;
 }
 @media (max-width: 767px) {
   .news__contents {
@@ -1714,7 +1763,7 @@ section {
     -webkit-column-gap: normal;
        -moz-column-gap: normal;
             column-gap: normal;
-    row-gap: 50px;
+    row-gap: 49px;
     margin-top: 38px;
   }
 }
@@ -1726,7 +1775,7 @@ section {
 }
 @media (max-width: 767px) {
   .news__content-wrap {
-    padding-bottom: 15px;
+    padding-bottom: 11px;
     width: 100%;
   }
 }
@@ -1743,7 +1792,7 @@ section {
 }
 
 .news-content__items {
-  padding: 13px 20px 0;
+  padding: 9px 20px 0;
 }
 
 .news-content__arow {
@@ -1751,7 +1800,7 @@ section {
 }
 @media (max-width: 767px) {
   .news-content__arow {
-    margin-top: 6px;
+    margin-top: 9px;
   }
 }
 
@@ -1759,7 +1808,7 @@ section {
   font-size: 2rem;
   line-height: 1;
   padding: 10px;
-  color: #4D9600;
+  color: #55A500;
   position: relative;
   display: block;
   width: 80px;
@@ -1799,14 +1848,14 @@ section {
 }
 
 .news-item {
-  border-bottom: solid 1px #4D9600;
+  border-bottom: solid 1px #55A500;
 }
 
 .news-item__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-block: 19px 12px;
+  padding-block: 20.5px 12px;
   -webkit-column-gap: 17.6923076923%;
      -moz-column-gap: 17.6923076923%;
           column-gap: 17.6923076923%;
@@ -1834,9 +1883,13 @@ section {
   width: 53px;
 }
 
-.news-item__link__time time {
+.news-item__date {
   font-size: 1.6rem;
   line-height: 2.0625;
+  display: block;
+  line-height: 1;
+  /* 英字（単語）を途中で折り返さない */
+  word-break: keep-all;
 }
 
 .news-item__text {
@@ -1848,14 +1901,10 @@ section {
 .news-item__text p {
   font-size: 1.8rem;
   line-height: 1.3888888889;
-}
-@media (max-width: 767px) {
-  .news-item__text p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /* 会社案内 */
@@ -1909,7 +1958,7 @@ section {
 }
 @media (max-width: 767px) {
   .contact__form {
-    margin-top: 40px;
+    margin-top: 45px;
   }
 }
 

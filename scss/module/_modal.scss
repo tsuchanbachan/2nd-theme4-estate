@@ -30,7 +30,6 @@
   transform: translate(-50%, -50%);
   width: calc(450 / 1080 * 100%);
   background: #fff;
-
   padding: 15px 15px 6px;
 
   @include mq(sp) {
@@ -39,9 +38,6 @@
   }
 }
 
-.modal__image {
-
-}
 .modal__image img {
   aspect-ratio: 420 / 220;
   object-fit: cover;

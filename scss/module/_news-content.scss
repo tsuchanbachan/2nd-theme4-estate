@@ -1,0 +1,71 @@
+@use "../global" as *;
+@use "sass:math";
+
+.news-content {}
+
+.news-content__header {
+  background-color: $color-green;
+  padding: 9px 20px 8px;
+}
+
+.news-content__header h3 {
+  color: $color-white;
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+
+}
+
+.news-content__items {
+  padding: 9px 20px 0;
+}
+
+.news-content__item {}
+
+.news-content__arow {
+  margin-top: 14px;
+
+  @include mq(sp) {
+    margin-top: 9px;
+  }
+}
+
+.news-content__arow a {
+  font-size: 2rem;
+  line-height: calc(20 / 20);
+  padding: 10px;
+  color: #55A500;
+
+  position: relative;
+  display: block;
+  width: 80px;
+  margin-inline: auto 30px;
+
+  // transition: opacity 0.4s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  @include mq(sp) {
+    line-height: calc(33 / 20);
+  }
+}
+
+.news-content__arow a:hover {
+  @media (any-hover: hover) {
+    opacity: 0.7;
+    // 右に10px動く
+    transform: translateX(10px);
+  }
+}
+
+.news-content__arow a:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 18px;
+  background-image: url(../image/icon-arrow.svg);
+  top: 20px;
+  left: 10px;
+
+  @include mq(sp) {
+    top: 28px;
+  }
+}

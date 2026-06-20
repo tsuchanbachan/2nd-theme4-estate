@@ -11,12 +11,6 @@
   }
 }
 
-.works__inner {}
-
-.works__title-wrap {}
-
-.works__title {}
-
 .works__contents {
   display: flex;
   column-gap: calc(40 / 920 * 100%);
@@ -27,7 +21,4 @@
     row-gap: 22px;
     margin-top: 38px;
   }
-}
-
-.works__content {
 }

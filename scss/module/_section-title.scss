@@ -1,0 +1,22 @@
+@use "../global" as *;
+@use "sass:math";
+
+// セクションタイトル
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  line-height: calc(33 / 30);
+  color: $color-green;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.section-title p {
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+  margin-top: 6px;
+  letter-spacing: 0.3em;
+}

@@ -1,7 +1,6 @@
 @use "sass:map";
 @use '../global' as *;
 
-/* このコメントは消すこと！下のセクションpadding-inline:30とセット */
 .inner {
   max-width: 920px;
   margin-inline: auto;

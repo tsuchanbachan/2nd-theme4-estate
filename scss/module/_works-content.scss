@@ -3,16 +3,15 @@
 
 .works-content {
   width: calc(200 / 920 * 100%);
+
   @include mq(sp) {
     width: 100%;
   }
-
 }
 
 .works-content__link {
   cursor: pointer;
   transition: opacity 0.4s;
-
 }
 
 .works-content__link:hover {
@@ -39,7 +38,3 @@
     margin-top: 9px;
   }
 }
-
-.works-content__about {}
-
-.works-content__modal {}

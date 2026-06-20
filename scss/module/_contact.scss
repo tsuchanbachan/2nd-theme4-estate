@@ -1,0 +1,35 @@
+@use "../global" as *;
+@use "sass:math";
+
+/* コンタクト */
+/* ------- */
+.contact {
+  padding-block: 80px;
+  background-color: $color-back-green;
+
+  @include mq(sp) {
+    padding-block: 50px;
+  }
+}
+
+.contact__inner {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.contact__contents {
+  margin-top: 35px;
+}
+
+.contact__text p {
+  font-size: 2rem;
+  line-height: calc(33 / 20);
+}
+
+.contact__form {
+  margin-top: 70px;
+
+  @include mq(sp) {
+    margin-top: 45px;
+  }
+}

@@ -16,13 +16,9 @@
 
 .overlap-parts__green {
   background: $color-green;
-
   grid-column: 1 / 4;
   grid-row: 1 / 4;
-
-  @include mq(sp) {}
 }
-
 
 .overlap-parts__child {
   color: $color-white;
@@ -30,15 +26,11 @@
   grid-row: 2 / 3;
 
   @include mq(sp) {
-    // width: 100%;
-
     grid-column: 1 / 4;
     grid-row: 1 / 4;
     padding: 20px 20px 12px;
   }
 }
-
-.overlap-parts__title {}
 
 .overlap-parts__title h3 {
   font-size: 2.5rem;
@@ -46,7 +38,6 @@
 
   @include mq(tab) {
     font-size: calc(25 / 1080 * 100vw);
-
   }
 
   @include mq(sp) {
@@ -78,7 +69,6 @@
 
   @include mq(tab) {
     font-size: calc(16 / 1080 * 100vw);
-
   }
 
   @include mq(sp) {
@@ -92,12 +82,9 @@
 .overlap-layout--reverse {
 
   .overlap-parts {
-    // display: grid;
     grid-template-columns: 40fr 275fr 185fr;
-    // grid-template-rows: 50fr 158fr 42fr;
   }
 }
-
 
 // -------
 // company
@@ -124,12 +111,7 @@
     line-height: calc(33 / 20);
 
     @include mq(tab) {
-      // font-size: calc(16 / 1080 * 100vw);
       font-size: 1.8rem;
-    }
-  
-    @include mq(sp) {
-      // font-size: 16px;
     }
   }
 
@@ -142,7 +124,7 @@
     line-height: calc(25 / 16);
 
     @include mq(tab) {
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
   }
 

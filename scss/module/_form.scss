@@ -12,7 +12,6 @@ $border-cr: #4D9600; //inputのhover or focus時の色
 $radio-fz: 1.8rem; //フォントサイズ
 $radio-size: 20px; //外枠の幅・高さ
 $radio-bg-cr: #fff; //外枠の背景色
-// $radio-border-cr: #707070; //外枠の色
 $radio-size-inner: 6px; //ラジオボタン幅高さ
 $radio-bg-cr-inner: #000; //ラジオボタンの背景色
 $radio-space: 19px; //ラジオボタンと文字の距離
@@ -24,7 +23,6 @@ $radio-space-betweenRadio: 74px; //ラジオボタンの間の距離
 $check-fz: 1.8rem; //フォントサイズ
 $check-size: 20px; //外枠の幅高さ
 $check-bg-cr: #fff; //外枠の背景色
-// $check-border-cr: #f00; //外枠の色
 $check-bg-cr-inner: #333; //チェックマークの背景色
 $check-space: 20px; //チェックマークと文字の距離
 $check-space-betweenRadio: 20px; //チェックマークの間の距離
@@ -42,29 +40,16 @@ $textarea-height: 200px;
 [type="email"],
 select,
 textarea {
-  /*↓リセットCSS */
+  // ↓リセットCSS
   border: none;
   border-radius: 0;
   background-image: none;
   font-family: inherit;
-
-  /*↓カスタム */
-  // margin-top: 10px;
+  // ↓カスタム
   font-size: 1.8rem;
   padding: 10.9375px 20px;
   width: 100%;
-  // max-width: 300px;
   background: #fff;
-  // border-radius: 6px;
-
-  /*↓↓↓↓不要ならコメントアウト or 削除 */
-  // &:hover {  //ホバーしたときの色
-  // 	border: 1px solid #000;
-  // }
-  /*↓↓選択されているときの色*/
-  &:focus {
-    // border: 1px solid #000;
-  }
 
   @include mq(sp) {
     line-height: calc(25 / 16);
@@ -73,14 +58,13 @@ textarea {
   }
 }
 
-/* プレースホルダーのスタイル */
+// プレースホルダーのスタイル
 input::placeholder {
   color: #A0A0A0;
   font-size: 1.8rem;
   
   @include mq(sp) {
     font-size: 1.6rem;
-    
   }
 }
 /* ------------
@@ -110,7 +94,6 @@ input::placeholder {
       left: 0;
       transform: translateY(-50%);
       background: $radio-bg-cr;
-      // border: 1px solid $radio-border-cr;
       border-radius: 50%;
       width: $radio-size;
       height: $radio-size;
@@ -164,13 +147,10 @@ input::placeholder {
     display: inline-block;
     position: relative;
     padding: 0 0 0 calc($check-size + $check-space);
-    // margin: 0 $check-space-betweenRadio 0 0;
     margin: 0;
     font-size: $check-fz;
     line-height: 1;
     cursor: pointer;
-    // transition: 0.3s ease;
-
     width: calc(20px + 20px + 126px + 34px);
 
     @include mq(sp) {
@@ -192,11 +172,6 @@ input::placeholder {
       height: $check-size;
       display: block;
     }
-
-    // &::after {
-    //   opacity: 0;
-    //   transition: 0.3s ease;
-    // }
   }
 
   // チェックマーク
@@ -216,7 +191,6 @@ input::placeholder {
       margin-left: 0.1em;
       border-left: $check-weight solid $check-bg-cr-inner;
       border-bottom: $check-weight solid $check-bg-cr-inner;
-
     }
   }
 }
@@ -225,41 +199,21 @@ input::placeholder {
 セレクト
 ------------- */
 select {
-  /*↓リセットCSS */
+  // ↓リセットCSS
   border-radius: 0;
   font-family: inherit;
   color: inherit;
   border: none;
   cursor: pointer;
-
-  /*↓カスタム */
-  // margin-top: 10px;
-  // font-size: 1.6rem;
-  // line-heightが制御不能？なのでpaddingで調整
-  // padding: 16px 10px;
+  // ↓カスタム
   background-color: #fff;
-  /*↓デフォルトのアイコンを消す場合はコメントアウト（自作ならnoneに。つける場合はauto？）*/
+  // ↓アイコン自作ならnoneに
   appearance: none;
-
-  /*↓デフォルトではないアイコンを使う場合は入力する*/
-  // background-image: url();
-  // background-position: right 12px center;
-  // background-repeat: no-repeat;
-
-  // &:focus {
-  //   border: 1px solid $border-cr;
-  // }
-
-
-    // min-width: 230px;
-    // height: 2.8em;
-
-    height: 50px;
+  height: 50px;
 }
 
 .form__input:has(select) {
   position: relative;
-  
 }
 
 .form__input:has(select)::after {
@@ -268,19 +222,11 @@ select {
   pointer-events: none;
   right: 20px;
   top: 39%;
-  // transform: translateX(-50%);
   width: 20px;
   height: 16px;
-
   background-image: url(../image/icon-triangle.svg);
-  // background-position: right 12px center;
   background-repeat: no-repeat;
 }
-
-select:focus {
-  // outline: 2px solid #2589d0;
-}
-
 
 /* ------------
 テキストエリア
@@ -290,7 +236,6 @@ textarea {
   width: 100%;
   // 謎の余白防止
   display: block;
-  // max-width: 600px;
 }
 
 
@@ -298,7 +243,7 @@ textarea {
 ボタン
 ------------- */
 [type="submit"] {
-  /*↓リセットCSS */
+  // ↓リセットCSS
   margin: 0;
   background-image: none;
   width: auto;
@@ -307,15 +252,7 @@ textarea {
   border: none;
   border-radius: 0;
 
-  /*↓カスタム */
-  // padding: 20px 72px;
-  // background: red;
-  // color: white;
-  // font-size: 1.4rem;
-  // cursor: pointer;
-  // transition: 0.3s ease;
-  // line-height: 1;
-
+  // ↓カスタム
   width: 300px;
   background: $color-green;
   color: #fff;
@@ -327,16 +264,14 @@ textarea {
   text-align: center;
   transition: background-color 0.4s, color 0.4s;
   border: 1px solid $color-green;
-  // padding-bottom: 0.2rem;
   box-sizing: border-box;
 
   @include mq(sp) {
     width: 315px;
     max-width: 100%;
-      // width: min(315px, 100%);
   }
 
-  /* ホバー時反転 */
+  // ホバー時反転
   @media (any-hover: hover) {
     &:hover {
       background: #fff;
@@ -351,11 +286,9 @@ textarea {
   justify-content: center;
 
   @include mq(sp) {
-    // justify-content: stretch;
     margin-top: 50px;
   }
 }
-
 
 .form__items {
   display: flex;
@@ -478,9 +411,6 @@ textarea {
   height: calc(300px - 40px * 2);
   // スクロールバーを含んだ余白
   padding-right: calc(40px + 10px);
-
-
-
 
   @include mq(sp) {
     height: calc(323px - 30px * 2);

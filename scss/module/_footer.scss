@@ -55,19 +55,16 @@
 .footer__nav ul {
   display: flex;
   column-gap: 50px;
-  // column-gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 5px;
   
   @include mq(tab) {
     column-gap: 30px;
-    // column-gap: 10px;
   }
   
   @include mq(sp) {
     column-gap: 30px;
-    // column-gap: 10px;
   }
 }
 
@@ -76,43 +73,8 @@
   // １単語はheight33だがカンプのグループだと35なので
   line-height: calc(35 / 18);
   text-transform: uppercase;
-  /* 英字（単語）を途中で折り返さない */
+  // 英字（単語）を途中で折り返さない
   word-break: keep-all;
-}
-
-.footer__nav ul li:not(:first-of-type):not(:last-of-type) a {
-  // padding-inline: 10px;
-
-  @include mq(tab) {
-    // padding-inline: 10px;
-  }
-  @include mq(sp) {
-    // padding-inline: 10px;
-  }
-}
-
-.footer__nav ul li:first-of-type a {
-  // padding-right: 10px;
-
-    @include mq(tab) {
-      // padding-right: 10px;
-    }
-  
-    @include mq(sp) {
-      // padding-inline: 10px;
-    }
-}
-
-.footer__nav ul li:last-of-type a {
-  // padding-left: 10px;
-
-  @include mq(tab) {
-    // padding-left: 10px;
-  }
-
-  @include mq(sp) {
-    // padding-inline: 10px;
-  }
 }
 
 .footer__nav li a:hover {
@@ -120,9 +82,6 @@
     opacity: 0.7;
   }
 }
-
-
-
 
 .footer__sns {
   margin-top: 26px;
@@ -133,26 +92,11 @@
   column-gap: 30px;
   align-items: center;
   justify-content: center;
-
 }
-
-.sns {}
-
-.sns__list {}
-
-.sns__link {}
 
 .sns__link img {
   width: 28px;
 }
-
-.x {}
-
-.fb {}
-
-.youtube {}
-
-.insta {}
 
 .footer__copyright {
   display: flex;

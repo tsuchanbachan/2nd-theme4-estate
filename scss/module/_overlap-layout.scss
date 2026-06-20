@@ -54,7 +54,6 @@
   // fade-up影響による重なり順変動の対策
   position: relative;
   z-index: 1;
-
   
   @include mq(sp) {
     grid-column: auto;

@@ -1,16 +1,18 @@
 @use "sass:map";
 @use '../global' as *;
 
-.works-content {}
-
-.works-content__link {
+.works-content {
   width: calc(200 / 920 * 100%);
-  cursor: pointer;
-  transition: opacity 0.4s;
-
   @include mq(sp) {
     width: 100%;
   }
+
+}
+
+.works-content__link {
+  cursor: pointer;
+  transition: opacity 0.4s;
+
 }
 
 .works-content__link:hover {

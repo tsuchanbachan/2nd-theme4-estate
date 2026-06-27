@@ -278,14 +278,12 @@ meter {
   display: block;
 }
 
-/* 会社案内 */
-/* ------- */
 .company {
   padding-block: 80px;
 }
 @media (max-width: 767px) {
   .company {
-    padding-block: 50px;
+    padding-block: 52px 50px;
   }
 }
 
@@ -298,8 +296,6 @@ meter {
   }
 }
 
-/* コンタクト */
-/* ------- */
 .contact {
   padding-block: 80px;
   background-color: rgba(77, 150, 0, 0.15);
@@ -387,9 +383,16 @@ meter {
   }
 }
 
-.footer__company p {
+.footer__company a {
   font-size: 2rem;
   line-height: 1.65;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media (any-hover: hover) {
+  .footer__company a:hover {
+    opacity: 0.7;
+  }
 }
 
 .footer__nav {
@@ -413,7 +416,6 @@ meter {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  row-gap: 5px;
 }
 @media (min-width: 768px) and (max-width: 1079px) {
   .footer__nav ul {
@@ -492,21 +494,6 @@ meter {
   }
 }
 
-/* ------------
-デフォルト色の指定
--------------*/
-/* ------------
-ラジオボタンの指定
-------------- */
-/* ------------
-チェックボックスの指定
--------------*/
-/* ------------
-テキストエリアの指定
-------------- */
-/* ------------
-各種要素
-------------- */
 [type=text],
 [type=email],
 select,
@@ -516,7 +503,8 @@ textarea {
   background-image: none;
   font-family: inherit;
   font-size: 1.8rem;
-  padding: 10.9375px 20px;
+  line-height: 1.3888888889;
+  padding: 13px 20px 12px;
   width: 100%;
   background: #fff;
 }
@@ -573,9 +561,6 @@ input::placeholder {
   }
 }
 
-/* ------------
-ラジオボタン
-------------- */
 [type=radio] {
   display: none;
 }
@@ -633,9 +618,6 @@ input::placeholder {
   }
 }
 
-/* ------------
-チェックボックス
-------------- */
 [type=checkbox] {
   display: none;
 }
@@ -686,9 +668,6 @@ input::placeholder {
   border-bottom: 2px solid #333;
 }
 
-/* ------------
-セレクト
-------------- */
 select {
   border-radius: 0;
   font-family: inherit;
@@ -718,18 +697,14 @@ select {
   background-repeat: no-repeat;
 }
 
-/* ------------
-テキストエリア
-------------- */
 textarea {
   height: 200px;
   width: 100%;
   display: block;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
-/* ------------
-ボタン
-------------- */
 [type=submit] {
   margin: 0;
   background-image: none;
@@ -906,10 +881,6 @@ textarea {
   }
 }
 
-.form__item--privacy {
-  margin-top: -2px;
-}
-
 .form__input.input-check {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -928,36 +899,60 @@ textarea {
 }
 
 .form__privacy {
-  padding: 40px 10px 40px 40px;
+  padding: 10px;
   background: #fff;
 }
+
+.form__privacy-inner {
+  height: 280px;
+  width: 100%;
+  overflow-Y: scroll;
+}
 @media (max-width: 767px) {
-  .form__privacy {
-    padding: 30px 10px 30px 30px;
+  .form__privacy-inner {
+    height: 303px;
   }
+}
+
+.form__privacy-inner::-webkit-scrollbar {
+  width: 10px;
+  background: #E3E3E3;
+}
+
+.form__privacy-inner::-webkit-scrollbar-thumb {
+  background: #9B9B9B;
+  height: 3rem;
 }
 
 .form__privacy-content {
-  overflow-y: auto;
-  height: 220px;
-  padding-right: 50px;
+  padding: 30px;
 }
 @media (max-width: 767px) {
   .form__privacy-content {
-    height: 263px;
-    padding-right: 40px;
+    padding: 20px 30px 20px 20px;
   }
 }
 
+.form__privacy-content h3,
 .form__privacy-content p {
   font-size: 1.8rem;
   line-height: 1.7222222222;
 }
 @media (max-width: 767px) {
+  .form__privacy-content h3,
   .form__privacy-content p {
     font-size: 1.6rem;
     line-height: 2.0625;
   }
+}
+
+.form__privacy-content h3:not(:first-of-type) {
+  margin-top: 3.1rem;
+}
+
+.form__privacy-content ul li {
+  padding-left: 1em;
+  text-indent: -1em;
 }
 
 .hamburger {
@@ -972,7 +967,7 @@ textarea {
 .hamburger span {
   position: absolute;
   display: block;
-  top: 50%;
+  top: 48%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -984,7 +979,7 @@ textarea {
 }
 
 .hamburger span:nth-of-type(1) {
-  top: 30%;
+  top: 21%;
 }
 
 .hamburger span:nth-of-type(3) {
@@ -1137,12 +1132,16 @@ textarea {
   text-transform: uppercase;
   color: #fff;
   font-size: 1.8rem;
-  line-height: 1;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-  display: inline-block;
-  padding-block: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
+  height: 80px;
 }
 @media (min-width: 768px) and (max-width: 1079px) {
   .header__nav ul li a {
@@ -1162,7 +1161,7 @@ textarea {
   content: "";
   width: 100%;
   height: 1px;
-  bottom: 0;
+  bottom: 24.5px;
   left: 0;
   background-color: #fff;
   -webkit-transform: scaleX(0);
@@ -1267,7 +1266,7 @@ textarea {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  z-index: 10;
 }
 
 .mv__image img {
@@ -1296,7 +1295,7 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 2;
+  z-index: 20;
 }
 
 .mv__catch {
@@ -1311,6 +1310,7 @@ textarea {
   font-size: 4rem;
   line-height: 1.75;
   letter-spacing: 0.3em;
+  text-shadow: 0.5rem 0.5rem 0.5rem #000;
 }
 @media (max-width: 767px) {
   .mv__catch h2 {
@@ -1445,8 +1445,6 @@ textarea {
   overflow: hidden;
 }
 
-/* お知らせ */
-/* ------- */
 .news {
   padding-block: 81px 80px;
   background-color: rgba(77, 150, 0, 0.15);
@@ -1475,7 +1473,7 @@ textarea {
     -webkit-column-gap: normal;
        -moz-column-gap: normal;
             column-gap: normal;
-    row-gap: 49px;
+    row-gap: 50px;
     margin-top: 38px;
   }
 }
@@ -1741,6 +1739,11 @@ textarea {
   font-size: 16px;
   line-height: 1.5625;
 }
+@media (max-width: 767px) {
+  .overlap-layout--company .overlap-parts__text-tel dt {
+    padding-top: 3px;
+  }
+}
 .overlap-layout--company .overlap-parts__text-tel dd {
   font-size: 2.5rem;
   line-height: 1;
@@ -1756,10 +1759,24 @@ textarea {
   display: -ms-flexbox;
   display: flex;
 }
+@media (max-width: 767px) {
+  .overlap-layout--company .overlap-parts__text-mail {
+    margin-top: 15px;
+  }
+}
 .overlap-layout--company .overlap-parts__text-mail dt,
 .overlap-layout--company .overlap-parts__text-mail dd {
   font-size: 1.6rem;
   line-height: 1.5625;
+}
+.overlap-layout--company .overlap-parts__text-mail dd a {
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+@media (any-hover: hover) {
+  .overlap-layout--company .overlap-parts__text-mail dd a:hover {
+    opacity: 0.7;
+  }
 }
 
 .section-title {
@@ -1781,15 +1798,13 @@ textarea {
   letter-spacing: 0.3em;
 }
 
-/* サービス */
-/* ------ */
 .service {
   background-color: rgba(77, 150, 0, 0.15);
   padding-block: 79px 80px;
 }
 @media (max-width: 767px) {
   .service {
-    padding-block: 50px;
+    padding-block: 48px 50px;
   }
 }
 
@@ -1805,8 +1820,6 @@ textarea {
   }
 }
 
-/* topへ戻る */
-/* -------- */
 .top-button {
   position: fixed;
   bottom: 60px;
@@ -1879,8 +1892,6 @@ textarea {
   }
 }
 
-/* ワークス */
-/* ------- */
 .works {
   padding-block: 81px 97px;
 }

@@ -25,7 +25,6 @@
     grid-column: auto;
     grid-row: auto;
   }
-
 }
 
 .overlap-layout__image {
@@ -86,8 +85,6 @@
 
     @include mq(sp) {
       grid-column: auto;
-      // grid-row: auto;
-      // width: 100%;
     }
   }
 
@@ -102,7 +99,6 @@
   }
 }
 
-// -------
 // company
 // -------
 .overlap-layout--company {

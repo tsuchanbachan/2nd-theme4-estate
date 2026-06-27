@@ -12,7 +12,6 @@
   color: $color-white;
   font-size: 2rem;
   line-height: calc(33 / 20);
-
 }
 
 .news-content__items {
@@ -40,7 +39,6 @@
   width: 80px;
   margin-inline: auto 30px;
 
-  // transition: opacity 0.4s;
   transition: transform 0.3s ease, opacity 0.3s ease;
 
   @include mq(sp) {

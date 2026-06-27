@@ -2,7 +2,6 @@
 @use "sass:math";
 
 // MV
-// ---
 .mv {
   position: relative;
 }
@@ -17,7 +16,7 @@
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  z-index: 10;
 }
 
 .mv__image img {
@@ -38,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 20;
 }
 
 .mv__catch {
@@ -53,6 +52,7 @@
   font-size: 4rem;
   line-height: calc(70 / 40);
   letter-spacing: 0.3em;
+  text-shadow: 0.5rem 0.5rem 0.5rem #000;
 
   @include mq(sp) {
     font-size: 3rem;

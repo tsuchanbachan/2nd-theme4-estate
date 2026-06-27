@@ -7,11 +7,11 @@
   grid-template-rows: 50fr 158fr 42fr;
 
   @include mq(sp) {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      grid-template-rows: 1fr;
-      // row-gap: 6px;
-    }
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-rows: 1fr;
+    // row-gap: 6px;
+  }
 }
 
 .overlap-parts__green {
@@ -48,7 +48,6 @@
   @media (max-width: 374px) {
     font-size: 1.8rem;
   }
-
 }
 
 .overlap-parts__title h3 span {
@@ -76,7 +75,6 @@
   }
 }
 
-// -------
 // reverse
 // -------
 .overlap-layout--reverse {
@@ -86,7 +84,6 @@
   }
 }
 
-// -------
 // company
 // -------
 .overlap-layout--company {
@@ -137,6 +134,10 @@
   .overlap-parts__text-tel dt {
     font-size: 16px;
     line-height: calc(25 / 16);
+
+    @include mq(sp) {
+      padding-top: 3px;
+    }
   }
 
   .overlap-parts__text-tel dd {
@@ -153,11 +154,26 @@
   .overlap-parts__text-mail {
     margin-top: 19px;
     display: flex;
+
+    @include mq(sp) {
+      margin-top: 15px;
+    }
   }
 
   .overlap-parts__text-mail dt,
   .overlap-parts__text-mail dd {
     font-size: 1.6rem;
     line-height: calc(25 / 16);
+  }
+
+  .overlap-parts__text-mail dd {
+    a {
+      transition: opacity 0.4s;
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
   }
 }

@@ -1,13 +1,12 @@
 @use "../global" as *;
 @use "sass:math";
 
-/* 会社案内 */
-/* ------- */
+// 会社案内
 .company {
   padding-block: 80px;
 
   @include mq(sp) {
-    padding-block: 50px;
+    padding-block: 52px 50px;
   }
 }
 

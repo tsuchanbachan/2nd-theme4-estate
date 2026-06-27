@@ -278,8 +278,6 @@ meter {
   display: block;
 }
 
-/* 会社案内 */
-/* ------- */
 .company {
   padding-block: 80px;
 }
@@ -298,8 +296,6 @@ meter {
   }
 }
 
-/* コンタクト */
-/* ------- */
 .contact {
   padding-block: 80px;
   background-color: rgba(77, 150, 0, 0.15);
@@ -498,21 +494,6 @@ meter {
   }
 }
 
-/* ------------
-デフォルト色の指定
--------------*/
-/* ------------
-ラジオボタンの指定
-------------- */
-/* ------------
-チェックボックスの指定
--------------*/
-/* ------------
-テキストエリアの指定
-------------- */
-/* ------------
-各種要素
-------------- */
 [type=text],
 [type=email],
 select,
@@ -580,9 +561,6 @@ input::placeholder {
   }
 }
 
-/* ------------
-ラジオボタン
-------------- */
 [type=radio] {
   display: none;
 }
@@ -640,9 +618,6 @@ input::placeholder {
   }
 }
 
-/* ------------
-チェックボックス
-------------- */
 [type=checkbox] {
   display: none;
 }
@@ -693,9 +668,6 @@ input::placeholder {
   border-bottom: 2px solid #333;
 }
 
-/* ------------
-セレクト
-------------- */
 select {
   border-radius: 0;
   font-family: inherit;
@@ -725,9 +697,6 @@ select {
   background-repeat: no-repeat;
 }
 
-/* ------------
-テキストエリア
-------------- */
 textarea {
   height: 200px;
   width: 100%;
@@ -736,9 +705,6 @@ textarea {
   overflow-wrap: break-word;
 }
 
-/* ------------
-ボタン
-------------- */
 [type=submit] {
   margin: 0;
   background-image: none;
@@ -1479,8 +1445,6 @@ textarea {
   overflow: hidden;
 }
 
-/* お知らせ */
-/* ------- */
 .news {
   padding-block: 81px 80px;
   background-color: rgba(77, 150, 0, 0.15);
@@ -1834,8 +1798,6 @@ textarea {
   letter-spacing: 0.3em;
 }
 
-/* サービス */
-/* ------ */
 .service {
   background-color: rgba(77, 150, 0, 0.15);
   padding-block: 79px 80px;
@@ -1858,8 +1820,6 @@ textarea {
   }
 }
 
-/* topへ戻る */
-/* -------- */
 .top-button {
   position: fixed;
   bottom: 60px;
@@ -1932,8 +1892,6 @@ textarea {
   }
 }
 
-/* ワークス */
-/* ------- */
 .works {
   padding-block: 81px 97px;
 }

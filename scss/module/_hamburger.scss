@@ -12,16 +12,11 @@
   // transition: opacity 0.4s;
 }
 
-.hamburger:hover {
-  @media (any-hover: hover) {
-    // opacity: 0.7;
-  }
-}
-
 // 三本線
 .hamburger span {
   position: absolute;
   display: block;
+  // top: 50%;
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);

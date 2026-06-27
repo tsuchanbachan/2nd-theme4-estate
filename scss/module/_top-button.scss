@@ -1,8 +1,7 @@
 @use "../global" as *;
 @use "sass:math";
 
-/* topへ戻る */
-/* -------- */
+// topへ戻る
 .top-button {
   position: fixed;
   bottom: 60px;

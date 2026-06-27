@@ -1,8 +1,7 @@
 @use "../global" as *;
 @use "sass:math";
 
-/* サービス */
-/* ------ */
+// サービス
 .service {
   background-color: $color-back-green;
   padding-block: 79px 80px;

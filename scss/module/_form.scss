@@ -1,14 +1,10 @@
 @use "sass:map";
 @use '../global' as *;
 
-/* ------------
-デフォルト色の指定
--------------*/
+// デフォルト色の指定
 $border-cr: #4D9600; //inputのhover or focus時の色
 
-/* ------------
-ラジオボタンの指定
-------------- */
+// ラジオボタンの指定
 $radio-fz: 1.8rem; //フォントサイズ
 $radio-size: 20px; //外枠の幅・高さ
 $radio-bg-cr: #fff; //外枠の背景色
@@ -17,9 +13,7 @@ $radio-bg-cr-inner: #000; //ラジオボタンの背景色
 $radio-space: 19px; //ラジオボタンと文字の距離
 $radio-space-betweenRadio: 74px; //ラジオボタンの間の距離
 
-/* ------------
-チェックボックスの指定
--------------*/
+// チェックボックスの指定
 $check-fz: 1.8rem; //フォントサイズ
 $check-size: 20px; //外枠の幅高さ
 $check-bg-cr: #fff; //外枠の背景色
@@ -28,14 +22,10 @@ $check-space: 20px; //チェックマークと文字の距離
 $check-space-betweenRadio: 20px; //チェックマークの間の距離
 $check-weight: 2px; //チェックマークの線の太さ(px)
 
-/* ------------
-テキストエリアの指定
-------------- */
+// テキストエリアの指定
 $textarea-height: 200px;
 
-/* ------------
-各種要素
-------------- */
+// 各種要素
 [type="text"],
 [type="email"],
 select,
@@ -68,9 +58,8 @@ input::placeholder {
     font-size: 1.6rem;
   }
 }
-/* ------------
-ラジオボタン
-------------- */
+
+// ラジオボタン
 [type="radio"] {
   display: none;
 
@@ -137,9 +126,8 @@ input::placeholder {
   }
 }     
 
-/* ------------
-チェックボックス
-------------- */
+
+// チェックボックス
 [type="checkbox"] {
   display: none;
 
@@ -196,9 +184,8 @@ input::placeholder {
   }
 }
 
-/* ------------
-セレクト
-------------- */
+
+// セレクト
 select {
   // ↓リセットCSS
   border-radius: 0;
@@ -229,9 +216,8 @@ select {
   background-repeat: no-repeat;
 }
 
-/* ------------
-テキストエリア
-------------- */
+
+// テキストエリア
 textarea {
   height: $textarea-height;
   width: 100%;
@@ -244,9 +230,7 @@ textarea {
 }
 
 
-/* ------------
-ボタン
-------------- */
+// ボタン
 [type="submit"] {
   // ↓リセットCSS
   margin: 0;

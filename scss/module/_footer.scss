@@ -77,7 +77,7 @@
 
 .footer__nav ul li a {
   font-size: 18px;
-  // １単語はheight33だがカンプのグループだと35なので
+  // １単語はheight33だがカンプグループは35
   line-height: calc(35 / 18);
   text-transform: uppercase;
   // 英字（単語）を途中で折り返さない

@@ -1,8 +1,7 @@
 @use "../global" as *;
 @use "sass:math";
 
-/* お知らせ */
-/* ------- */
+// お知らせ
 .news {
   padding-block: 81px 80px;
   background-color: $color-back-green;

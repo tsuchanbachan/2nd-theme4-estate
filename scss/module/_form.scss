@@ -47,7 +47,8 @@ textarea {
   font-family: inherit;
   // ↓カスタム
   font-size: 1.8rem;
-  padding: 10.9375px 20px;
+  line-height: calc(25 / 18);
+  padding: 13px 20px 12px;
   width: 100%;
   background: #fff;
 
@@ -236,6 +237,10 @@ textarea {
   width: 100%;
   // 謎の余白防止
   display: block;
+  // word-break: keep-all;
+  // 日本語を自然に改行、URLや長い英単語だけはちゃんと折り返す
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 
@@ -380,7 +385,7 @@ textarea {
 }
 
 .form__item--privacy {
-  margin-top: -2px;
+  // margin-top: -2px;
 }
 
 .form__input.input-check {
@@ -394,30 +399,49 @@ textarea {
   }
 }
 
-// 個人情報
+// 個人情報の中身
 .form__privacy {
-  // 右はスクロールバーの外側の余白
-  padding: 40px 10px 40px 40px;
+  // スクロールバーの右側の余白
+  padding: 10px;
   background: #fff;
-  
+}
+
+.form__privacy-inner {
+  // __privacyで上下計20pxとってるので300-20
+  height: 280px;
+  width: 100%;
+  overflow-Y: scroll;
+
   @include mq(sp) {
-    padding: 30px 10px 30px 30px;
+    height: 303px;
   }
 }
 
+// スクロールバーのカスタマイズ（レール？）
+.form__privacy-inner::-webkit-scrollbar {
+  width: 10px;
+  background: #E3E3E3;
+}
+
+// スクロールバーのカスタマイズ（電車？）
+.form__privacy-inner::-webkit-scrollbar-thumb {
+  background: #9B9B9B;
+  height: 3rem;
+}
+
+// 中身
 .form__privacy-content {
-  overflow-y: auto;
-  // ここにheight指定しないとはみ出す。
-  height: calc(300px - 40px * 2);
-  // スクロールバーを含んだ余白
-  padding-right: calc(40px + 10px);
+  // __privacyで10pxとっているので30
+  padding: 30px;
 
   @include mq(sp) {
-    height: calc(323px - 30px * 2);
-    padding-right: calc(30px + 10px);
+    // height: calc(323px - 30px * 2);
+    // padding-right: calc(30px + 10px);
+    padding: 20px 30px 20px 20px;
   }
 }
 
+.form__privacy-content h3,
 .form__privacy-content p {
   font-size: 1.8rem;
   line-height: calc(31 / 18);
@@ -426,4 +450,14 @@ textarea {
     font-size: 1.6rem;
     line-height: calc(33 / 16);
   }
+}
+
+.form__privacy-content h3:not(:first-of-type) {
+  margin-top: 3.1rem;
+}
+
+// 箇条書き
+.form__privacy-content ul li {
+  padding-left: 1em;
+  text-indent: -1em;
 }

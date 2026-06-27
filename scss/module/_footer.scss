@@ -39,9 +39,16 @@
   }
 }
 
-.footer__company p {
+.footer__company a {
   font-size: 2rem;
   line-height: calc(33 / 20);
+  transition: opacity 0.4s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 .footer__nav {
@@ -57,7 +64,7 @@
   column-gap: 50px;
   justify-content: center;
   flex-wrap: wrap;
-  row-gap: 5px;
+  // row-gap: 5px;
   
   @include mq(tab) {
     column-gap: 30px;
